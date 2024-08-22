@@ -1,12 +1,20 @@
-# FastAPI first steps
+# FastAPI Words first steps
 Erste Schritte mit der FastAPI in Python
+
+[
+    ![Open in Remote - Containers](
+        https://xebia.com/wp-content/uploads/2023/11/v1.svg    )
+](
+    https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/seeli-teaching/fastapi-first-steps.git
+)
+
+
 
 ### Notwendige Schritte
 
-1. Öffne dann das so erstellte Repository aus deinem GitHub Account in einem Codespace und warte bis es den Webserver “uvicorn” gestartet hat.
-2. Stelle sicher, dass die Extension “REST Client” installiert ist.
+1. Clone das Repository in einem DevContainer.
 3. Öffne die Datei test.http
-4. Teste root URL und foo-URL 
+4. Teste root URL
 5. Teste GET all Words
 6. Teste GET specific word und GET unknown word
 7. Teste Neues Wort erfassen
