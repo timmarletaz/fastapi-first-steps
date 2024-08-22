@@ -5,9 +5,6 @@
 # Get root page
 GET {{url}}
 
-###
-# Get foo -> bar
-GET {{url}}/foo
 
 ###
 # Get all Words

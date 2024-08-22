@@ -2,19 +2,6 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 
 
-app = FastAPI(title="FastAPI first steps", version="0.0.1")
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
-
-
-@app.get("/foo")
-async def root():
-    return {"message": "bar"}
-
-
 class Word(BaseModel):
     word: str
     requested: int = 0
@@ -26,8 +13,18 @@ word_records = [
     Word(word="Berlin")]
 
 
+app = FastAPI(title="FastAPI Words", version="0.0.1")
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hello from the Words API"}
+
+
 @app.get("/words")
 async def get_all_words():
+    for record in word_records:
+        record.requested += 1
     return word_records
 
 
@@ -39,7 +36,7 @@ async def get_one_word(word: str):
             record.requested += 1
             return record
 
-    raise HTTPException(status_code=404, detail="Word not found")
+    raise HTTPException(status_code=404, detail=f"Word '{word}' not found")
 
 
 @app.post("/words")
@@ -59,8 +56,9 @@ async def delete_word(word: str):
             continue
         word_records_new.append(record)
 
-    word_records = word_records_new
     if deleted_word_count == 0:
-        raise HTTPException(status_code=404, detail="Word not found")
+        raise HTTPException(
+            status_code=404, detail=f"Word '{word}' not found in List of Words")
 
+    word_records = word_records_new
     return {"message": f"{deleted_word_count} record(s) deleted"}
