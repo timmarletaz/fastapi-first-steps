@@ -8,8 +8,6 @@ Erste Schritte mit der FastAPI in Python
     https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/seeli-teaching/fastapi-first-steps.git
 )
 
-
-
 ### Notwendige Schritte
 
 1. Clone das Repository in einem DevContainer.
