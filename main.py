@@ -13,6 +13,7 @@ class Word(BaseModel):
 word_records = [
     Word(word="Apfel"),
     Word(word="Auto"),
+    Word(word="Bern"),
     Word(word="Berlin")]
 
 # Here begins the API definition part
