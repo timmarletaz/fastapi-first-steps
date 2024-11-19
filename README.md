@@ -1,5 +1,5 @@
 # FastAPI Words first steps
-Erste Schritte mit der FastAPI in Python
+Erste Schritte mit der FastAPI in Python 
 
 [
     ![Open in Remote - Containers](
